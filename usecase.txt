@@ -1,0 +1,72 @@
+digraph G {
+    rankdir=LR;
+    fontname = "Hack Nerd Font Bold";
+    label="Use Case Diagram";
+    fontsize="30pt";
+    newrank=true;
+    /* Actor nodes */
+    
+    subgraph clusterUser {label="User"; fontsize="20pt"; labelloc="b"; peripheries=0; user};
+    subgraph clusterAdmin {label="Admin"; fontsize="20pt"; labelloc="b"; peripheries=0; admin};
+    
+    user [shapefile="stick.png", peripheries=0, label=""];
+    admin [shapefile="stick.png", peripheries=0, label=""];
+    
+   /* Use case nodes */
+    node [shape=ellipse, style=solid; fontname="Hack Nerd Font Bold"; penwidth=3];
+    
+    //user valid
+    authenticate_user [label="Authenticate"];
+    upload_image [label="Upload Image"];
+    capture_image [label="Capture Image"];
+    view_processing_results [label="View Processing Image"];
+    submit_help_tickets [label="Submit Help Ticket"];
+    
+    //user cases interaction
+    process_image [label="Process Image"];
+    log_error [label="Log Error"];
+    user_authentication_error [label="Invalid Username Or Password"];
+
+    //admin valid
+    authenticate_admin [label="Authenticate Admin"];
+    manage_help_tickets [label="Manage Help Tickets"];
+    handle_errors [label="Handle Errors"];
+    manage_ai_models [label="Manage AI Models"];
+    manage_user [label="Manage User"];
+
+    //admin cases interaction
+    admin_authentication_error [label="Invalid Admin Username Or Password"];
+
+    /* Edges */
+    edge [arrowhead="normal"; penwidth=3;];
+    admin->user;
+    
+    edge [arrowhead="none"];
+    admin->authenticate_admin;
+    user->authenticate_user;
+    
+    admin->manage_help_tickets;
+    admin->handle_errors;
+    admin->manage_ai_models;
+    admin->manage_user;
+
+    user->upload_image;
+    user->capture_image;
+    user->view_processing_results;
+    user->submit_help_tickets;
+    
+    edge [arrowhead="normal"];
+    upload_image->process_image;
+    capture_image->process_image;
+    process_image->view_processing_results;
+    process_image->log_error;
+    log_error->handle_errors;
+    manage_user->authenticate_user;
+
+    user_authentication_error->authenticate_user [label="<<exclude>>"; fontname="Hack Nerd Font Bold";];
+    admin_authentication_error->authenticate_admin[label="<<exclude>>"; fontname="Hack Nerd Font Bold";];
+
+    {rank=min; user; admin;}
+    {rank=same; authenticate_user; upload_image; view_processing_results; submit_help_tickets; authenticate_admin; manage_help_tickets; handle_errors; manage_ai_models;}
+    {rank=same; process_image; log_error; user_authentication_error; admin_authentication_error; manage_user;}
+}

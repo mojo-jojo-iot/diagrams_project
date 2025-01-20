@@ -1,0 +1,89 @@
+graph ER {
+    fontname="Hack Nerd font Bold"
+    node [fontname="Hack Nerd Font Bold"]
+    edge [fontname="Hack Nerd Font Bold"]
+    label="Entity Relationship Diagram" 
+    fontsize="30pt"
+    layout=neato
+    overlap=false
+
+    //Entities
+    node [shape=box]; Users, Admins, Images, ProcessingResults, HelpTickets, Sessions, ErrorLogs, AIModels;
+
+    //Attributes
+    node [shape="ellipse"]; user_id, admin_id, role, image_id, image_url, uploaded_at, is_processed, result_id, processed_data, processed_at, ticket_id, subject, session_id, login_at, logout_at, log_id, error_message, logged_at, model_id, model_name, model_type, model_path, model_version;
+    
+    {node [label="username"] user_username; admin_username;}
+    {node [label="email"] user_email; admin_email;}
+    {node [label="password_hash"] user_password_hash; admin_password_hash;}
+    {node [label="salt"] user_salt; admin_salt;}
+    {node [label="created_at"] user_created_at; admin_created_at;help_created_at; model_created_at;}
+    {node [label="updated_at"] user_updated_at; admin_updated_at; help_updated_at; model_updated_at;}
+    {node [label="description"] help_description, model_description;}
+    {node [label="status"] help_status, model_status;}
+    
+    //Relationships
+    node [shape="diamond"]; Uploads, Creates, Has, Triggers, Processes;
+    {node [label="Generates"] g1, g2, g3, g4;}
+    {node [label="Manages"] m1, m2;}
+
+    //Connections
+    //Users and it's attributes
+    Users -- user_id, user_username, user_email, user_password_hash, user_salt, user_created_at, user_updated_at [len=0.5];
+    
+    //Admins and it's attributes
+    Admins -- admin_id, admin_username, admin_email, admin_password_hash, admin_salt, role, admin_created_at, admin_updated_at[len=0.5] ;
+
+    //Images and it's attributes
+    Images -- image_id, image_url, uploaded_at, is_processed [len=0.5];
+
+    //ProcessingResults and it's attributes
+    ProcessingResults -- result_id, processed_data, processed_at [len=0.5];
+    
+    //HelpTickets and it's attributes
+    HelpTickets -- ticket_id, subject, help_description, help_status, help_created_at, help_updated_at [len=0.5];
+
+    //Sessions and it's attributes
+    Sessions -- session_id, login_at, logout_at [len=0.5];
+
+    //ErrorLogs and it's attributes
+    ErrorLogs -- log_id, error_message, logged_at [len=0.5];
+   
+    //AIModels and it's attributes
+    AIModels -- model_id, model_name, model_version, model_path, model_created_at, model_updated_at, model_description, model_status, model_type [len=0.5];
+
+    //Relationship cardinalities
+    Users--Uploads [label="1", len=0.5]; 
+    Uploads--Images [label="N", len=0.5]; 
+
+    Images--g1  [label="1", len=0.5];
+    g1--ProcessingResults  [label="1", len=0.5];
+
+    Users--Creates  [label="1", len=0.5];
+    Creates--HelpTickets  [label="N", len=0.5];
+
+    Admins--m1  [label="1", len=0.5];
+    m1--HelpTickets  [label="N", len=0.5];
+
+    Users--Has  [label="1", len=0.5];
+    Has--Sessions  [label="N", len=0.5];
+
+    Users--g2  [label="1", len=0.5];
+    g2--ErrorLogs  [label="N", len=0.5];
+
+    Images--Triggers  [label="1", len=0.5];
+    Triggers -- HelpTickets  [label="N", len=0.5];
+    
+    Admins--m2  [label="1", len=0.5];
+    m2--AIModels [label="N", len=0.5];
+
+    Images--g3  [label="1", len=0.5];
+    g3--ErrorLogs [label="N", len=0.5];
+
+    Images--Processes  [label="M", len=0.5];
+    Processes--AIModels [label="N", len=0.5];
+    
+    AIModels--g4  [label="1", len=0.5];
+    g4--ProcessingResults [label="N", len=0.5];
+
+}
