@@ -1,0 +1,24 @@
+digraph G {
+    fontname="Hack Nerd Font Bold";
+    label="Sequence Diagram";
+    splines=false
+
+    node [shape=box fontname="Hack Nerd Font Bold"]
+    user_start [label="User"];
+    user_0     [label="" shape=point height=0];
+    user_1     [label="" shape=point height=0];
+    user_end   [label="" style=invis];
+    user_start->user_0->user_1->user_end [style="dashed" arrowhead="none"];
+
+    admin_start [label="Admin"];
+    admin_0     [label="" shape=point height=0];
+    admin_1     [label="" shape=point height=0];
+    admin_end   [label="" style=invis];
+    admin_start->admin_0->admin_1->admin_end [style="dashed" arrowhead="none"];
+
+    {rank=same;
+    user_0 -> user_0 [weight=0
+                arrowhead=vee
+                label=<<B>1 </B> Authentication Request>]}
+}
+
