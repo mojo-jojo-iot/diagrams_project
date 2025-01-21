@@ -232,52 +232,66 @@ digraph G {
         {rank=same; system_start; model_start; database_start;}
     }
 
-    //connection
+//USERFLOW
+//Authenticate user
 user_0 -> system_0 [xlabel="Enter credentials" constraint=false, arrowhead="onormal"];
 system_1 -> database_1 [xlabel="Validate credentials" constraint=false, arrowhead="onormal"];
 database_2 -> system_2 [xlabel="Return success/failure" constraint=false, arrowhead="onormal"];
 system_3 -> user_3 [xlabel="Grant or deny access" constraint=false, arrowhead="onormal"];
 
+//Upload image
 user_4 -> system_4 [xlabel="Upload image file" constraint=false, arrowhead="onormal"];
 system_5 -> database_5 [xlabel="Store image metadata and URL" constraint=false, arrowhead="onormal"];
 system_6 -> user_6 [xlabel="Confirm upload" constraint=false, arrowhead="onormal"];
 
+//Process image
 system_7 -> model_7 [xlabel="Send image for processing" constraint=false, arrowhead="onormal"];
 model_8 -> system_8 [xlabel="Return processing result" constraint=false, arrowhead="onormal"];
 system_9 -> database_9 [xlabel="Save processing result" constraint=false, arrowhead="onormal"];
 
+//View processing results
 user_10 -> system_10 [xlabel="Request processing result for an image" constraint=false, arrowhead="onormal"];
 system_11 -> database_11 [xlabel="Fetch processing result" constraint=false, arrowhead="onormal"];
 database_12 -> system_12 [xlabel="Return result" constraint=false, arrowhead="onormal"];
 system_13 -> user_13 [xlabel="Display result" constraint=false, arrowhead="onormal"];
 
+//Submit help ticket
 user_14 -> system_14 [xlabel="Submit a help ticket (with details)" constraint=false, arrowhead="onormal"];
 system_15 -> database_15 [xlabel="Save ticket details" constraint=false, arrowhead="onormal"];
 system_16 -> user_16 [xlabel="Confirm ticket submission" constraint=false, arrowhead="onormal"];
 
+//ADMIN FLOW
+//Authenticate admin
 admin_17 -> system_17 [xlabel="Enter credentials" constraint=false, arrowhead="onormal"];
 system_18 -> database_18 [xlabel="Validate credentials" constraint=false, arrowhead="onormal"];
 database_19 -> system_19 [xlabel="Return success/failure" constraint=false, arrowhead="onormal"];
 system_20 -> admin_20 [xlabel="Grant or deny access" constraint=false, arrowhead="onormal"];
 
+//Manage AI Models
 admin_21 -> system_21 [xlabel="Add/update AI model metadata" constraint=false, arrowhead="onormal"];
 system_22 -> database_22 [xlabel="Save metadata changes" constraint=false, arrowhead="onormal"];
 system_23 -> admin_23 [xlabel="Confirm update" constraint=false, arrowhead="onormal"];
 
+//Handle Errors
 admin_24 -> system_24 [xlabel="View error logs" constraint=false, arrowhead="onormal"];
 system_25 -> database_25 [xlabel="Fetch error logs" constraint=false, arrowhead="onormal"];
 database_26 -> system_26 [xlabel="Return error log details" constraint=false, arrowhead="onormal"];
 admin_27 -> system_27 [xlabel="Resolve issue (e.g., restart processing)" constraint=false, arrowhead="onormal"];
 
+//Manage Help Tickets
 admin_28 -> system_28 [xlabel="View help ticket list" constraint=false, arrowhead="onormal"];
 system_29 -> database_29 [xlabel="Fetch ticket details" constraint=false, arrowhead="onormal"];
 database_30 -> system_30 [xlabel="Return ticket data" constraint=false, arrowhead="onormal"];
 admin_31 -> system_31 [xlabel="Update ticket status" constraint=false, arrowhead="onormal"];
 system_32 -> database_32 [xlabel="Save ticket status changes" constraint=false, arrowhead="onormal"];
 
+
+//AI Model Flow
+//Process Image
 system_33 -> model_33 [xlabel="Send image and metadata" constraint=false, arrowhead="onormal"];
 model_34 -> system_34 [xlabel="Return processing result or log an error" constraint=false, arrowhead="onormal"];
 
+//Log Error
 model_35 -> system_35 [xlabel="Send error log details" constraint=false, arrowhead="onormal"];
 system_36 -> database_36 [xlabel="Save error log" constraint=false, arrowhead="onormal"];
 
