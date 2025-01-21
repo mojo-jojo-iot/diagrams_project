@@ -1,24 +1,285 @@
 digraph G {
     fontname="Hack Nerd Font Bold";
     label="Sequence Diagram";
-    splines=false
+    splines="ortho"
+        rankdir="TB"
+        layout="dot"
 
-    node [shape=box fontname="Hack Nerd Font Bold"]
-    user_start [label="User"];
-    user_0     [label="" shape=point height=0];
-    user_1     [label="" shape=point height=0];
-    user_end   [label="" style=invis];
-    user_start->user_0->user_1->user_end [style="dashed" arrowhead="none"];
+        node [shape=box fontname="Hack Nerd Font Bold"]
 
-    admin_start [label="Admin"];
-    admin_0     [label="" shape=point height=0];
-    admin_1     [label="" shape=point height=0];
-    admin_end   [label="" style=invis];
-    admin_start->admin_0->admin_1->admin_end [style="dashed" arrowhead="none"];
+        subgraph cluster_actors {
+            label="Actors";
+            user_start [label="User"];
+            user_0     [label="" shape=point style=invis];
+            user_1     [label="" shape=point style=invis];
+            user_2     [label="" shape=point style=invis];
+            user_3     [label="" shape=point style=invis];
+            user_4     [label="" shape=point style=invis];
+            user_5     [label="" shape=point style=invis];
+            user_6     [label="" shape=point style=invis];
+            user_7     [label="" shape=point style=invis];
+            user_8     [label="" shape=point style=invis];
+            user_9     [label="" shape=point style=invis];
+            user_10    [label="" shape=point style=invis];
+            user_11    [label="" shape=point style=invis];
+            user_12    [label="" shape=point style=invis];
+            user_13    [label="" shape=point style=invis];
+            user_14    [label="" shape=point style=invis];
+            user_15    [label="" shape=point style=invis];
+            user_16    [label="" shape=point style=invis];
+            user_17    [label="" shape=point style=invis];
+            user_18    [label="" shape=point style=invis];
+            user_19    [label="" shape=point style=invis];
+            user_20    [label="" shape=point style=invis];
+            user_21    [label="" shape=point style=invis];
+            user_22    [label="" shape=point style=invis];
+            user_23    [label="" shape=point style=invis];
+            user_24    [label="" shape=point style=invis];
+            user_25    [label="" shape=point style=invis];
+            user_26    [label="" shape=point style=invis];
+            user_27    [label="" shape=point style=invis];
+            user_28    [label="" shape=point style=invis];
+            user_29    [label="" shape=point style=invis];
+            user_30    [label="" shape=point style=invis];
+            user_31    [label="" shape=point style=invis];
+            user_32    [label="" shape=point style=invis];
+            user_33    [label="" shape=point style=invis];
+            user_34    [label="" shape=point style=invis];
+            user_35    [label="" shape=point style=invis];
+            user_36    [label="" shape=point style=invis];
+            user_37    [label="" shape=point style=invis];
 
-    {rank=same;
-    user_0 -> user_0 [weight=0
-                arrowhead=vee
-                label=<<B>1 </B> Authentication Request>]}
+            user_end   [label="" style=invis];
+            user_start->user_0->user_1->user_2->user_3->user_4->user_5->user_6->user_7->user_8->user_9->user_10->user_11->user_12->user_13->user_14->user_15->user_16->user_17->user_18->user_19->user_20->user_21->user_22->user_23->user_24->user_25->user_26->user_27->user_28->user_29->user_30->user_31->user_32->user_33->user_34->user_35->user_36->user_37->user_end [style="dashed" arrowhead="none"];
+
+            admin_start [label="Admin"];
+            admin_0     [label="" shape=point style=invis];
+            admin_1     [label="" shape=point style=invis];
+            admin_2     [label="" shape=point style=invis];
+            admin_3     [label="" shape=point style=invis];
+            admin_4     [label="" shape=point style=invis];
+            admin_5     [label="" shape=point style=invis];
+            admin_6     [label="" shape=point style=invis];
+            admin_7     [label="" shape=point style=invis];
+            admin_8     [label="" shape=point style=invis];
+            admin_9     [label="" shape=point style=invis];
+            admin_10    [label="" shape=point style=invis];
+            admin_11    [label="" shape=point style=invis];
+            admin_12    [label="" shape=point style=invis];
+            admin_13    [label="" shape=point style=invis];
+            admin_14    [label="" shape=point style=invis];
+            admin_15    [label="" shape=point style=invis];
+            admin_16    [label="" shape=point style=invis];
+            admin_17    [label="" shape=point style=invis];
+            admin_18    [label="" shape=point style=invis];
+            admin_19    [label="" shape=point style=invis];
+            admin_20    [label="" shape=point style=invis];
+            admin_21    [label="" shape=point style=invis];
+            admin_22    [label="" shape=point style=invis];
+            admin_23    [label="" shape=point style=invis];
+            admin_24    [label="" shape=point style=invis];
+            admin_25    [label="" shape=point style=invis];
+            admin_26    [label="" shape=point style=invis];
+            admin_27    [label="" shape=point style=invis];
+            admin_28    [label="" shape=point style=invis];
+            admin_29    [label="" shape=point style=invis];
+            admin_30    [label="" shape=point style=invis];
+            admin_31    [label="" shape=point style=invis];
+            admin_32    [label="" shape=point style=invis];
+            admin_33    [label="" shape=point style=invis];
+            admin_34    [label="" shape=point style=invis];
+            admin_35    [label="" shape=point style=invis];
+            admin_36    [label="" shape=point style=invis];
+            admin_37    [label="" shape=point style=invis];
+
+            admin_end   [label="" style=invis];
+            admin_start -> admin_0 -> admin_1 -> admin_2 -> admin_3 -> admin_4 -> admin_5 -> admin_6 -> admin_7 -> admin_8 -> admin_9 -> admin_10 -> admin_11 -> admin_12 -> admin_13 -> admin_14 -> admin_15 -> admin_16 -> admin_17 -> admin_18 -> admin_19 -> admin_20 -> admin_21 -> admin_22 -> admin_23 -> admin_24 -> admin_25 -> admin_26 -> admin_27 -> admin_28 -> admin_29 -> admin_30 -> admin_31 -> admin_32 -> admin_33 -> admin_34 -> admin_35 -> admin_36 -> admin_37 -> admin_end [style="dashed" arrowhead="none"];
+
+            {rank=same; user_start; admin_start;}
+        }
+
+    subgraph cluster_components {
+        label="Components";
+        system_start [label="System"];
+        system_0     [label="" shape=point style=invis];
+        system_1     [label="" shape=point style=invis];
+        system_2     [label="" shape=point style=invis];
+        system_3     [label="" shape=point style=invis];
+        system_4     [label="" shape=point style=invis];
+        system_5     [label="" shape=point style=invis];
+        system_6     [label="" shape=point style=invis];
+        system_7     [label="" shape=point style=invis];
+        system_8     [label="" shape=point style=invis];
+        system_9     [label="" shape=point style=invis];
+        system_10    [label="" shape=point style=invis];
+        system_11    [label="" shape=point style=invis];
+        system_12    [label="" shape=point style=invis];
+        system_13    [label="" shape=point style=invis];
+        system_14    [label="" shape=point style=invis];
+        system_15    [label="" shape=point style=invis];
+        system_16    [label="" shape=point style=invis];
+        system_17    [label="" shape=point style=invis];
+        system_18    [label="" shape=point style=invis];
+        system_19    [label="" shape=point style=invis];
+        system_20    [label="" shape=point style=invis];
+        system_21    [label="" shape=point style=invis];
+        system_22    [label="" shape=point style=invis];
+        system_23    [label="" shape=point style=invis];
+        system_24    [label="" shape=point style=invis];
+        system_25    [label="" shape=point style=invis];
+        system_26    [label="" shape=point style=invis];
+        system_27    [label="" shape=point style=invis];
+        system_28    [label="" shape=point style=invis];
+        system_29    [label="" shape=point style=invis];
+        system_30    [label="" shape=point style=invis];
+        system_31    [label="" shape=point style=invis];
+        system_32    [label="" shape=point style=invis];
+        system_33    [label="" shape=point style=invis];
+        system_34    [label="" shape=point style=invis];
+        system_35    [label="" shape=point style=invis];
+        system_36    [label="" shape=point style=invis];
+        system_37    [label="" shape=point style=invis];
+
+        system_end   [label="" style=invis];
+        system_start->system_0->system_1->system_2->system_3->system_4->system_5 -> system_6 -> system_7 -> system_8 -> system_9 -> system_10 -> system_11 -> system_12 -> system_13 -> system_14 -> system_15 -> system_16 -> system_17 -> system_18 -> system_19 -> system_20 -> system_21 -> system_22 -> system_23 -> system_24 -> system_25 -> system_26 -> system_27 -> system_28 -> system_29 -> system_30 -> system_31 -> system_32 -> system_33 -> system_34 -> system_35 -> system_36 -> system_37 -> system_end [style="dashed" arrowhead="none"];
+
+        model_start [label="Model"];
+        model_0     [label="" shape=point style=invis];
+        model_1     [label="" shape=point style=invis];
+        model_2     [label="" shape=point style=invis];
+        model_3     [label="" shape=point style=invis];
+        model_4     [label="" shape=point style=invis];
+        model_5     [label="" shape=point style=invis];
+        model_6     [label="" shape=point style=invis];
+        model_7     [label="" shape=point style=invis];
+        model_8     [label="" shape=point style=invis];
+        model_9     [label="" shape=point style=invis];
+        model_10    [label="" shape=point style=invis];
+        model_11    [label="" shape=point style=invis];
+        model_12    [label="" shape=point style=invis];
+        model_13    [label="" shape=point style=invis];
+        model_14    [label="" shape=point style=invis];
+        model_15    [label="" shape=point style=invis];
+        model_16    [label="" shape=point style=invis];
+        model_17    [label="" shape=point style=invis];
+        model_18    [label="" shape=point style=invis];
+        model_19    [label="" shape=point style=invis];
+        model_20    [label="" shape=point style=invis];
+        model_21    [label="" shape=point style=invis];
+        model_22    [label="" shape=point style=invis];
+        model_23    [label="" shape=point style=invis];
+        model_24    [label="" shape=point style=invis];
+        model_25    [label="" shape=point style=invis];
+        model_26    [label="" shape=point style=invis];
+        model_27    [label="" shape=point style=invis];
+        model_28    [label="" shape=point style=invis];
+        model_29    [label="" shape=point style=invis];
+        model_30    [label="" shape=point style=invis];
+        model_31    [label="" shape=point style=invis];
+        model_32    [label="" shape=point style=invis];
+        model_33    [label="" shape=point style=invis];
+        model_34    [label="" shape=point style=invis];
+        model_35    [label="" shape=point style=invis];
+        model_36    [label="" shape=point style=invis];
+        model_37    [label="" shape=point style=invis];
+
+        model_end   [label="" style=invis];
+        model_start->model_0->model_1->model_2->model_3->model_4->model_5 -> model_6 -> model_7 -> model_8 -> model_9 -> model_10 -> model_11 -> model_12 -> model_13 -> model_14 -> model_15 -> model_16 -> model_17 -> model_18 -> model_19 -> model_20 -> model_21 -> model_22 -> model_23 -> model_24 -> model_25 -> model_26 -> model_27 -> model_28 -> model_29 -> model_30 -> model_31 -> model_32 -> model_33 -> model_34 -> model_35 -> model_36 -> model_37 -> model_end [style="dashed" arrowhead="none"];
+
+        database_start [label="Database"];
+        database_0     [label="" shape=point style=invis];
+        database_1     [label="" shape=point style=invis];
+        database_2     [label="" shape=point style=invis];
+        database_3     [label="" shape=point style=invis];
+        database_4     [label="" shape=point style=invis];
+        database_5     [label="" shape=point style=invis];
+        database_6     [label="" shape=point style=invis];
+        database_7     [label="" shape=point style=invis];
+        database_8     [label="" shape=point style=invis];
+        database_9     [label="" shape=point style=invis];
+        database_10    [label="" shape=point style=invis];
+        database_11    [label="" shape=point style=invis];
+        database_12    [label="" shape=point style=invis];
+        database_13    [label="" shape=point style=invis];
+        database_14    [label="" shape=point style=invis];
+        database_15    [label="" shape=point style=invis];
+        database_16    [label="" shape=point style=invis];
+        database_17    [label="" shape=point style=invis];
+        database_18    [label="" shape=point style=invis];
+        database_19    [label="" shape=point style=invis];
+        database_20    [label="" shape=point style=invis];
+        database_21    [label="" shape=point style=invis];
+        database_22    [label="" shape=point style=invis];
+        database_23    [label="" shape=point style=invis];
+        database_24    [label="" shape=point style=invis];
+        database_25    [label="" shape=point style=invis];
+        database_26    [label="" shape=point style=invis];
+        database_27    [label="" shape=point style=invis];
+        database_28    [label="" shape=point style=invis];
+        database_29    [label="" shape=point style=invis];
+        database_30    [label="" shape=point style=invis];
+        database_31    [label="" shape=point style=invis];
+        database_32    [label="" shape=point style=invis];
+        database_33    [label="" shape=point style=invis];
+        database_34    [label="" shape=point style=invis];
+        database_35    [label="" shape=point style=invis];
+        database_36    [label="" shape=point style=invis];
+        database_37    [label="" shape=point style=invis];
+
+        database_end   [label="" style=invis];
+        database_start->database_0->database_1->database_2->database_3->database_4->database_5 -> database_6 -> database_7 -> database_8 -> database_9 -> database_10 -> database_11 -> database_12 -> database_13 -> database_14 -> database_15 -> database_16 -> database_17 -> database_18 -> database_19 -> database_20 -> database_21 -> database_22 -> database_23 -> database_24 -> database_25 -> database_26 -> database_27 -> database_28 -> database_29 -> database_30 -> database_31 -> database_32 -> database_33 -> database_34 -> database_35 -> database_36 -> database_37 -> database_end [style="dashed" arrowhead="none"];
+
+        {rank=same; system_start; model_start; database_start;}
+    }
+
+    //connection
+user_0 -> system_0 [xlabel="Enter credentials" constraint=false, arrowhead="onormal"];
+system_1 -> database_1 [xlabel="Validate credentials" constraint=false, arrowhead="onormal"];
+database_2 -> system_2 [xlabel="Return success/failure" constraint=false, arrowhead="onormal"];
+system_3 -> user_3 [xlabel="Grant or deny access" constraint=false, arrowhead="onormal"];
+
+user_4 -> system_4 [xlabel="Upload image file" constraint=false, arrowhead="onormal"];
+system_5 -> database_5 [xlabel="Store image metadata and URL" constraint=false, arrowhead="onormal"];
+system_6 -> user_6 [xlabel="Confirm upload" constraint=false, arrowhead="onormal"];
+
+system_7 -> model_7 [xlabel="Send image for processing" constraint=false, arrowhead="onormal"];
+model_8 -> system_8 [xlabel="Return processing result" constraint=false, arrowhead="onormal"];
+system_9 -> database_9 [xlabel="Save processing result" constraint=false, arrowhead="onormal"];
+
+user_10 -> system_10 [xlabel="Request processing result for an image" constraint=false, arrowhead="onormal"];
+system_11 -> database_11 [xlabel="Fetch processing result" constraint=false, arrowhead="onormal"];
+database_12 -> system_12 [xlabel="Return result" constraint=false, arrowhead="onormal"];
+system_13 -> user_13 [xlabel="Display result" constraint=false, arrowhead="onormal"];
+
+user_14 -> system_14 [xlabel="Submit a help ticket (with details)" constraint=false, arrowhead="onormal"];
+system_15 -> database_15 [xlabel="Save ticket details" constraint=false, arrowhead="onormal"];
+system_16 -> user_16 [xlabel="Confirm ticket submission" constraint=false, arrowhead="onormal"];
+
+admin_17 -> system_17 [xlabel="Enter credentials" constraint=false, arrowhead="onormal"];
+system_18 -> database_18 [xlabel="Validate credentials" constraint=false, arrowhead="onormal"];
+database_19 -> system_19 [xlabel="Return success/failure" constraint=false, arrowhead="onormal"];
+system_20 -> admin_20 [xlabel="Grant or deny access" constraint=false, arrowhead="onormal"];
+
+admin_21 -> system_21 [xlabel="Add/update AI model metadata" constraint=false, arrowhead="onormal"];
+system_22 -> database_22 [xlabel="Save metadata changes" constraint=false, arrowhead="onormal"];
+system_23 -> admin_23 [xlabel="Confirm update" constraint=false, arrowhead="onormal"];
+
+admin_24 -> system_24 [xlabel="View error logs" constraint=false, arrowhead="onormal"];
+system_25 -> database_25 [xlabel="Fetch error logs" constraint=false, arrowhead="onormal"];
+database_26 -> system_26 [xlabel="Return error log details" constraint=false, arrowhead="onormal"];
+admin_27 -> system_27 [xlabel="Resolve issue (e.g., restart processing)" constraint=false, arrowhead="onormal"];
+
+admin_28 -> system_28 [xlabel="View help ticket list" constraint=false, arrowhead="onormal"];
+system_29 -> database_29 [xlabel="Fetch ticket details" constraint=false, arrowhead="onormal"];
+database_30 -> system_30 [xlabel="Return ticket data" constraint=false, arrowhead="onormal"];
+admin_31 -> system_31 [xlabel="Update ticket status" constraint=false, arrowhead="onormal"];
+system_32 -> database_32 [xlabel="Save ticket status changes" constraint=false, arrowhead="onormal"];
+
+system_33 -> model_33 [xlabel="Send image and metadata" constraint=false, arrowhead="onormal"];
+model_34 -> system_34 [xlabel="Return processing result or log an error" constraint=false, arrowhead="onormal"];
+
+model_35 -> system_35 [xlabel="Send error log details" constraint=false, arrowhead="onormal"];
+system_36 -> database_36 [xlabel="Save error log" constraint=false, arrowhead="onormal"];
+
 }
 
